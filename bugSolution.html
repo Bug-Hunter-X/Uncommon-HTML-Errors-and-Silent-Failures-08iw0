@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Corrected HTML</title>
+</head>
+<body>
+  <div id="myDiv">
+    This is some text.
+  </div>
+  <script>
+    // Correctly accessing an existing attribute (or handling the case where it doesn't exist)
+    let text = document.getElementById("myDiv").getAttribute("id");
+    console.log(text); // Output: myDiv
+    
+    let nonExistentAttribute = document.getElementById("myDiv").getAttribute("nonExistentAttribute");
+    if(nonExistentAttribute === null){ // Handle missing attributes
+        console.log("Attribute not found.");
+    } else {
+        console.log(nonExistentAttribute);
+    }
+    
+    // Correctly setting a valid CSS style
+    document.getElementById("myDiv").style.fontSize = "20px"; // correct syntax
+
+    // Avoid using unknown HTML tags.  Use only known and supported HTML tags
+    // Adding a paragraph instead of an unknown tag
+    let para = document.createElement("p");
+    para.textContent = "This paragraph was added correctly.";
+    document.body.appendChild(para);
+  </script>
+</body>
+</html>
