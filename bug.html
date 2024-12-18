@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Error</title>
+</head>
+<body>
+  <div id="myDiv">
+    This is some text.
+  </div>
+  <script>
+    // Incorrectly accessing a non-existent attribute
+    let text = document.getElementById("myDiv").getAttribute("nonExistentAttribute");
+    console.log(text); // Output: null. No error is thrown.
+
+    // Attempting to set a style property that is not valid CSS
+    document.getElementById("myDiv").style.font-size = "20px;";
+
+    // Using an unknown HTML tag
+    document.body.innerHTML += "<unknown-tag></unknown-tag>";
+  </script>
+</body>
+</html>
